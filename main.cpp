@@ -1,5 +1,6 @@
 #include "Engines/AstronomyEngine.hpp"
 #include "Engines/ShadowEngine.hpp"
+#include "Engines/GeoJsonWriter.hpp"
 
 #include <iostream>
 #include <chrono>
@@ -77,6 +78,11 @@ int main() {
     std::cout << "Cords calculated points of shadow: " << std::endl;
     for(int i = 0; i < Shadow.points.size(); i++) {
         std::cout << "  Pt " << i << ": X = " << Shadow.points[i].x << " M, Y = " << Shadow.points[i].y << " M\n";
+    }
+
+    // сохранение в GeoJSON
+    if (GeoJsonWriter::saveShadowToGeoJson("A:/ShadowMap/shadow_output.geojson", Shadow, volgogradLat, volgogradLon)) {
+        std::cout << "\nFile shadow_output.geojson successfully created\n" << std::endl;
     }
     // =========================================================
 
