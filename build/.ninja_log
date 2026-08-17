@@ -1,9 +1,7 @@
 # ninja log v7
-20	1217	8086805172550304	CMakeFiles/ShadowMap.dir/main.cpp.obj	a21a2d6a7ec200a1
-19	1435	8086804426382141	CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj	d60f4f003c9684db
-1218	1366	8086805184522802	ShadowMap.exe	d09a230f3485bbc3
-24	1512	8086804426439837	CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj	ac2c16165bf2cdc5
-15	1423	8086815148097815	CMakeFiles/ShadowMap.dir/main.cpp.obj	a21a2d6a7ec200a1
-1424	1588	8086815162182367	ShadowMap.exe	d09a230f3485bbc3
 22	1426	8086815865224062	CMakeFiles/ShadowMap.dir/main.cpp.obj	a21a2d6a7ec200a1
+19	1435	8086804426382141	CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj	d60f4f003c9684db
 1427	1564	8086815879273681	ShadowMap.exe	d09a230f3485bbc3
+24	1512	8086804426439837	CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj	ac2c16165bf2cdc5
+15	1406	8086989112658128	CMakeFiles/ShadowMap.dir/main.cpp.obj	a21a2d6a7ec200a1
+1406	1548	8086989126575283	ShadowMap.exe	d09a230f3485bbc3

@@ -64,7 +64,7 @@ int main() {
     // =========================================================
     std::cout << "\n\nTest AstronomyEngine (Volgograd)\n";
     std::cout << "Latitude / Longitude " << volgogradLat << " / " << volgogradLon << std::endl;
-    std::cout << "Date and Time UTC : 2026-08-17 15:00:00 UTC" << std::endl;
+    std::cout << "Date and Time UTC : 2026-08-17 12:59:00 UTC" << std::endl;
     std::cout << "Sun altitude " << sun.altitude << " deg" << std::endl;
 
     std::cout << "Sun Azimuth " << sun.azimuth << " deg" << std::endl;
