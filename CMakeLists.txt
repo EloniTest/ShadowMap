@@ -5,7 +5,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
+include_directories(.)
+
 add_executable(
+    ShadowMap
     main.cpp
     Engines/AstronomyEngine.cpp
 )

@@ -39,9 +39,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "main.cpp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main.cpp-Debug-6de5a1c471038b80efbe.json",
-					"name" : "main.cpp",
+					"id" : "ShadowMap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ShadowMap-Debug-6886dd7abe073428dbaf.json",
+					"name" : "ShadowMap",
 					"projectIndex" : 0
 				}
 			]

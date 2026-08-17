@@ -19,8 +19,9 @@ solarVector AstronomyEngine::calculateSolarPosition(double latDeg, double lonDeg
     int dayOfYear = utcTm.tm_yday + 1; // tm_yday начинается с 0, поэтому + 1
     double utcHours = utcTm.tm_hour + (utcTm.tm_min / 60.0) + (utcTm.tm_sec / 3600.0);
 
-    // склонение солнца в градусах меняется от -23.45 зимой и +23.45 летом
-    double declination = 23.45 * std::sin((365.0 / 360.0) * (dayOfYear + 284) * DEG2RAD) * DEG2RAD;
+    // склонение солнца в градусах меняется от -23.45 зимой и +23.45 летом (была ошибка в формуле, рассчет был неверен)
+    double declinationDeg = 23.45 * std::sin((360.0 / 365.0) * (dayOfYear + 284) * DEG2RAD);
+    double declination = declinationDeg * DEG2RAD;
 
     // часовой угол смещение солнца от местного полудня(1 ч = 15 град)
     double localSolarTime = utcHours + (lonDeg / 15.0); // Местное время по долготе
@@ -42,10 +43,13 @@ solarVector AstronomyEngine::calculateSolarPosition(double latDeg, double lonDeg
     // рассчет азимута
     double cosAz = (std::sin(declination) - std::sin(latRad) * std::sin(altitudeRad)) / (std::cos(latRad) * std::cos(altitudeRad));
     cosAz = std::clamp(cosAz, -1.0, 1.0);
-
+    // азимут в градусы
     double azimuthDeg = std::acos(cosAz) * RAD2DEG;
 
-    if (std::sin(hourAngle) > 0) azimuthDeg = 360.0 - azimuthDeg;
+    // коррекция направления азимута 
+    if (std::sin(hourAngle) > 0) {
+        azimuthDeg = 360.0 - azimuthDeg;
+    }
 
     return solarVector{.altitude = altitudeRad * RAD2DEG, .azimuth = azimuthDeg};
 
