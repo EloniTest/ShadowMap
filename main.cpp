@@ -11,8 +11,8 @@ int main() {
     std::cout << "Shadow Map Navigator" << std::endl;
 
     // корды волгограда
-    const double volgogradLat = 48.7071;
-    const double volgogradLon = 44.5169;
+    const double volgogradLat = 48.7194;
+    const double volgogradLon = 44.5018;
     const double PI = 3.14159265358979323846;
 
 
@@ -20,8 +20,8 @@ int main() {
     timeStruct.tm_year = 2026 - 1900; // 2026 год
     timeStruct.tm_mon = 7;            // Август (месяцы от 0 до 11)
     timeStruct.tm_mday = 17;
-    timeStruct.tm_hour = 12;          // 12 UTC == 15:00 мск
-    timeStruct.tm_min = 0;
+    timeStruct.tm_hour = 9;          // 9 UTC == 12:00 мск
+    timeStruct.tm_min = 59;
     timeStruct.tm_sec = 0;
 
     #if defined(_WIN32) || defined(_WIN64)
