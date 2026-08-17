@@ -29,7 +29,7 @@ solarVector AstronomyEngine::calculateSolarPosition(double latDeg, double lonDeg
 
     
 
-    // рассчет алтитуды
+    // рассчет амплитуды
     double latRad = latDeg * DEG2RAD;
     double sinAlt = std::sin(latRad) * std::sin(declination) + std::cos(latRad) * std::cos(declination) * std::cos(hourAngle);
 

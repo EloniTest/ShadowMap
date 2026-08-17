@@ -11,4 +11,5 @@ add_executable(
     ShadowMap
     main.cpp
     Engines/AstronomyEngine.cpp
+    Engines/ShadowEngine.cpp
 )

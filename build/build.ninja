@@ -67,6 +67,15 @@ build CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj: CXX_COMPILER__Sh
   OBJECT_FILE_DIR = CMakeFiles\ShadowMap.dir\Engines
   TARGET_SUPPORT_DIR = CMakeFiles\ShadowMap.dir
 
+build CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj: CXX_COMPILER__ShadowMap_unscanned_Debug A$:/ShadowMap/Engines/ShadowEngine.cpp || cmake_object_order_depends_target_ShadowMap
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\ShadowMap.dir\Engines\ShadowEngine.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IA:/ShadowMap/.
+  OBJECT_DIR = CMakeFiles\ShadowMap.dir
+  OBJECT_FILE_DIR = CMakeFiles\ShadowMap.dir\Engines
+  TARGET_SUPPORT_DIR = CMakeFiles\ShadowMap.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ShadowMap
@@ -75,7 +84,7 @@ build CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj: CXX_COMPILER__Sh
 #############################################
 # Link the executable ShadowMap.exe
 
-build ShadowMap.exe: CXX_EXECUTABLE_LINKER__ShadowMap_Debug CMakeFiles/ShadowMap.dir/main.cpp.obj CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj
+build ShadowMap.exe: CXX_EXECUTABLE_LINKER__ShadowMap_Debug CMakeFiles/ShadowMap.dir/main.cpp.obj CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
