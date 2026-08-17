@@ -1,0 +1,8 @@
+[
+{
+  "directory": "A:/ShadowMap/build",
+  "command": "C:/msys64/ucrt64/bin/g++.exe   -g -std=gnu++20 -o CMakeFiles/main.cpp.dir/Engines/AstronomyEngine.cpp.obj -c A:/ShadowMap/Engines/AstronomyEngine.cpp",
+  "file": "A:/ShadowMap/Engines/AstronomyEngine.cpp",
+  "output": "CMakeFiles/main.cpp.dir/Engines/AstronomyEngine.cpp.obj"
+}
+]
