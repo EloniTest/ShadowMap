@@ -1,20 +1,26 @@
 [
 {
   "directory": "A:/ShadowMap/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap/. -g -std=gnu++20 -o CMakeFiles\\ShadowMap.dir\\main.cpp.obj -c A:\\ShadowMap\\main.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap -IA:/ShadowMap/. -g -std=gnu++20 -o CMakeFiles\\CoreEngine.dir\\Engines\\AstronomyEngine.cpp.obj -c A:\\ShadowMap\\Engines\\AstronomyEngine.cpp",
+  "file": "A:/ShadowMap/Engines/AstronomyEngine.cpp",
+  "output": "A:/ShadowMap/build/CMakeFiles/CoreEngine.dir/Engines/AstronomyEngine.cpp.obj"
+},
+{
+  "directory": "A:/ShadowMap/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap -IA:/ShadowMap/. -g -std=gnu++20 -o CMakeFiles\\CoreEngine.dir\\Engines\\ShadowEngine.cpp.obj -c A:\\ShadowMap\\Engines\\ShadowEngine.cpp",
+  "file": "A:/ShadowMap/Engines/ShadowEngine.cpp",
+  "output": "A:/ShadowMap/build/CMakeFiles/CoreEngine.dir/Engines/ShadowEngine.cpp.obj"
+},
+{
+  "directory": "A:/ShadowMap/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap/. -IA:/ShadowMap -g -std=gnu++20 -o CMakeFiles\\ShadowMap.dir\\main.cpp.obj -c A:\\ShadowMap\\main.cpp",
   "file": "A:/ShadowMap/main.cpp",
   "output": "A:/ShadowMap/build/CMakeFiles/ShadowMap.dir/main.cpp.obj"
 },
 {
   "directory": "A:/ShadowMap/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap/. -g -std=gnu++20 -o CMakeFiles\\ShadowMap.dir\\Engines\\AstronomyEngine.cpp.obj -c A:\\ShadowMap\\Engines\\AstronomyEngine.cpp",
-  "file": "A:/ShadowMap/Engines/AstronomyEngine.cpp",
-  "output": "A:/ShadowMap/build/CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj"
-},
-{
-  "directory": "A:/ShadowMap/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap/. -g -std=gnu++20 -o CMakeFiles\\ShadowMap.dir\\Engines\\ShadowEngine.cpp.obj -c A:\\ShadowMap\\Engines\\ShadowEngine.cpp",
-  "file": "A:/ShadowMap/Engines/ShadowEngine.cpp",
-  "output": "A:/ShadowMap/build/CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IA:/ShadowMap/. -IA:/ShadowMap -g -std=gnu++20 -o Tests\\CMakeFiles\\RunTests.dir\\test_main.cpp.obj -c A:\\ShadowMap\\Tests\\test_main.cpp",
+  "file": "A:/ShadowMap/Tests/test_main.cpp",
+  "output": "A:/ShadowMap/build/Tests/CMakeFiles/RunTests.dir/test_main.cpp.obj"
 }
 ]

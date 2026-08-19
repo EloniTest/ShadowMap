@@ -1,3 +1,9 @@
+A:/ShadowMap/build/CMakeFiles/CoreEngine.dir
 A:/ShadowMap/build/CMakeFiles/ShadowMap.dir
+A:/ShadowMap/build/CMakeFiles/test.dir
 A:/ShadowMap/build/CMakeFiles/edit_cache.dir
 A:/ShadowMap/build/CMakeFiles/rebuild_cache.dir
+A:/ShadowMap/build/Tests/CMakeFiles/RunTests.dir
+A:/ShadowMap/build/Tests/CMakeFiles/test.dir
+A:/ShadowMap/build/Tests/CMakeFiles/edit_cache.dir
+A:/ShadowMap/build/Tests/CMakeFiles/rebuild_cache.dir

@@ -1,7 +1,11 @@
 # ninja log v7
-22	1426	8086815865224062	CMakeFiles/ShadowMap.dir/main.cpp.obj	a21a2d6a7ec200a1
+12	1410	8088366260475433	CMakeFiles/ShadowMap.dir/main.cpp.obj	7269b79ff588edde
 19	1435	8086804426382141	CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj	d60f4f003c9684db
-1427	1564	8086815879273681	ShadowMap.exe	d09a230f3485bbc3
-24	1512	8086804426439837	CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj	ac2c16165bf2cdc5
-15	1406	8086989112658128	CMakeFiles/ShadowMap.dir/main.cpp.obj	a21a2d6a7ec200a1
-1406	1548	8086989126575283	ShadowMap.exe	d09a230f3485bbc3
+1415	1577	8088366274493251	ShadowMap.exe	e9cc20538986f01a
+19	1651	8088341824160918	CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj	ac2c16165bf2cdc5
+14	1750	8088365169612793	CMakeFiles/CoreEngine.dir/Engines/AstronomyEngine.cpp.obj	c305d6ae4f211544
+17	1565	8088366260521597	Tests/CMakeFiles/RunTests.dir/test_main.cpp.obj	34eb9d5eedee0343
+19	1982	8088365169664379	CMakeFiles/CoreEngine.dir/Engines/ShadowEngine.cpp.obj	73d1807f8085d96
+1982	2287	8088365189292857	libCoreEngine.a	a01581067439bb93
+15	1311	8088367012222148	Tests/CMakeFiles/RunTests.dir/test_main.cpp.obj	8b177b299b7b3f63
+1311	1443	8088367025179680	Tests/RunTests.exe	461b71b1381ed833

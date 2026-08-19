@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: ShadowNavigator
+# Project: ShadowMap
 # Configurations: Debug
 # =============================================================================
 
@@ -41,39 +41,66 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = A$:/ShadowMap/build/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target CoreEngine
+
+
+#############################################
+# Order-only phony target for CoreEngine
+
+build cmake_object_order_depends_target_CoreEngine: phony || .
+
+build CMakeFiles/CoreEngine.dir/Engines/AstronomyEngine.cpp.obj: CXX_COMPILER__CoreEngine_unscanned_Debug A$:/ShadowMap/Engines/AstronomyEngine.cpp || cmake_object_order_depends_target_CoreEngine
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\CoreEngine.dir\Engines\AstronomyEngine.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IA:/ShadowMap -IA:/ShadowMap/.
+  OBJECT_DIR = CMakeFiles\CoreEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\CoreEngine.dir\Engines
+  TARGET_SUPPORT_DIR = CMakeFiles\CoreEngine.dir
+
+build CMakeFiles/CoreEngine.dir/Engines/ShadowEngine.cpp.obj: CXX_COMPILER__CoreEngine_unscanned_Debug A$:/ShadowMap/Engines/ShadowEngine.cpp || cmake_object_order_depends_target_CoreEngine
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\CoreEngine.dir\Engines\ShadowEngine.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IA:/ShadowMap -IA:/ShadowMap/.
+  OBJECT_DIR = CMakeFiles\CoreEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\CoreEngine.dir\Engines
+  TARGET_SUPPORT_DIR = CMakeFiles\CoreEngine.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target CoreEngine
+
+
+#############################################
+# Link the static library libCoreEngine.a
+
+build libCoreEngine.a: CXX_STATIC_LIBRARY_LINKER__CoreEngine_Debug CMakeFiles/CoreEngine.dir/Engines/AstronomyEngine.cpp.obj CMakeFiles/CoreEngine.dir/Engines/ShadowEngine.cpp.obj
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\CoreEngine.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libCoreEngine.a
+  TARGET_PDB = CoreEngine.a.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles\CoreEngine.dir
+
+# =============================================================================
 # Object build statements for EXECUTABLE target ShadowMap
 
 
 #############################################
 # Order-only phony target for ShadowMap
 
-build cmake_object_order_depends_target_ShadowMap: phony || .
+build cmake_object_order_depends_target_ShadowMap: phony || cmake_object_order_depends_target_CoreEngine
 
 build CMakeFiles/ShadowMap.dir/main.cpp.obj: CXX_COMPILER__ShadowMap_unscanned_Debug A$:/ShadowMap/main.cpp || cmake_object_order_depends_target_ShadowMap
   CONFIG = Debug
   DEP_FILE = CMakeFiles\ShadowMap.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IA:/ShadowMap/.
+  INCLUDES = -IA:/ShadowMap/. -IA:/ShadowMap
   OBJECT_DIR = CMakeFiles\ShadowMap.dir
   OBJECT_FILE_DIR = CMakeFiles\ShadowMap.dir
-  TARGET_SUPPORT_DIR = CMakeFiles\ShadowMap.dir
-
-build CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj: CXX_COMPILER__ShadowMap_unscanned_Debug A$:/ShadowMap/Engines/AstronomyEngine.cpp || cmake_object_order_depends_target_ShadowMap
-  CONFIG = Debug
-  DEP_FILE = CMakeFiles\ShadowMap.dir\Engines\AstronomyEngine.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IA:/ShadowMap/.
-  OBJECT_DIR = CMakeFiles\ShadowMap.dir
-  OBJECT_FILE_DIR = CMakeFiles\ShadowMap.dir\Engines
-  TARGET_SUPPORT_DIR = CMakeFiles\ShadowMap.dir
-
-build CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj: CXX_COMPILER__ShadowMap_unscanned_Debug A$:/ShadowMap/Engines/ShadowEngine.cpp || cmake_object_order_depends_target_ShadowMap
-  CONFIG = Debug
-  DEP_FILE = CMakeFiles\ShadowMap.dir\Engines\ShadowEngine.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IA:/ShadowMap/.
-  OBJECT_DIR = CMakeFiles\ShadowMap.dir
-  OBJECT_FILE_DIR = CMakeFiles\ShadowMap.dir\Engines
   TARGET_SUPPORT_DIR = CMakeFiles\ShadowMap.dir
 
 
@@ -84,10 +111,10 @@ build CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj: CXX_COMPILER__Shado
 #############################################
 # Link the executable ShadowMap.exe
 
-build ShadowMap.exe: CXX_EXECUTABLE_LINKER__ShadowMap_Debug CMakeFiles/ShadowMap.dir/main.cpp.obj CMakeFiles/ShadowMap.dir/Engines/AstronomyEngine.cpp.obj CMakeFiles/ShadowMap.dir/Engines/ShadowEngine.cpp.obj
+build ShadowMap.exe: CXX_EXECUTABLE_LINKER__ShadowMap_Debug CMakeFiles/ShadowMap.dir/main.cpp.obj | libCoreEngine.a || libCoreEngine.a
   CONFIG = Debug
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libCoreEngine.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ShadowMap.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -95,6 +122,18 @@ build ShadowMap.exe: CXX_EXECUTABLE_LINKER__ShadowMap_Debug CMakeFiles/ShadowMap
   TARGET_IMPLIB = libShadowMap.dll.a
   TARGET_PDB = ShadowMap.exe.dbg
   TARGET_SUPPORT_DIR = CMakeFiles\ShadowMap.dir
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D A:\ShadowMap\build && "C:\Program Files\CMake\bin\ctest.exe" "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
 
 
 #############################################
@@ -121,7 +160,92 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# A:/ShadowMap/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target RunTests
+
+
+#############################################
+# Order-only phony target for RunTests
+
+build cmake_object_order_depends_target_RunTests: phony || cmake_object_order_depends_target_CoreEngine
+
+build Tests/CMakeFiles/RunTests.dir/test_main.cpp.obj: CXX_COMPILER__RunTests_unscanned_Debug A$:/ShadowMap/Tests/test_main.cpp || cmake_object_order_depends_target_RunTests
+  CONFIG = Debug
+  DEP_FILE = Tests\CMakeFiles\RunTests.dir\test_main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IA:/ShadowMap/. -IA:/ShadowMap
+  OBJECT_DIR = Tests\CMakeFiles\RunTests.dir
+  OBJECT_FILE_DIR = Tests\CMakeFiles\RunTests.dir
+  TARGET_SUPPORT_DIR = Tests\CMakeFiles\RunTests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target RunTests
+
+
+#############################################
+# Link the executable Tests\RunTests.exe
+
+build Tests/RunTests.exe: CXX_EXECUTABLE_LINKER__RunTests_Debug Tests/CMakeFiles/RunTests.dir/test_main.cpp.obj | libCoreEngine.a || libCoreEngine.a
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = libCoreEngine.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = Tests\CMakeFiles\RunTests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Tests\RunTests.exe
+  TARGET_IMPLIB = Tests\libRunTests.dll.a
+  TARGET_PDB = RunTests.exe.dbg
+  TARGET_SUPPORT_DIR = Tests\CMakeFiles\RunTests.dir
+
+
+#############################################
+# Utility command for test
+
+build Tests/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D A:\ShadowMap\build\Tests && "C:\Program Files\CMake\bin\ctest.exe" "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Tests/test: phony Tests/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build Tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D A:\ShadowMap\build\Tests && "C:\Program Files\CMake\bin\cmake-gui.exe" -SA:\ShadowMap -BA:\ShadowMap\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build Tests/edit_cache: phony Tests/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D A:\ShadowMap\build\Tests && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SA:\ShadowMap -BA:\ShadowMap\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Tests/rebuild_cache: phony Tests/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build CoreEngine: phony libCoreEngine.a
+
+build RunTests: phony Tests/RunTests.exe
+
+build RunTests.exe: phony Tests/RunTests.exe
 
 build ShadowMap: phony ShadowMap.exe
 
@@ -133,7 +257,14 @@ build ShadowMap: phony ShadowMap.exe
 #############################################
 # Folder: A:/ShadowMap/build
 
-build all: phony ShadowMap.exe
+build all: phony libCoreEngine.a ShadowMap.exe Tests/all
+
+# =============================================================================
+
+#############################################
+# Folder: A:/ShadowMap/build/Tests
+
+build Tests/all: phony Tests/RunTests.exe
 
 # =============================================================================
 # Built-in targets
@@ -142,14 +273,14 @@ build all: phony ShadowMap.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja A$:/ShadowMap/build/cmake_install.cmake: RERUN_CMAKE | A$:/ShadowMap/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
+build build.ninja A$:/ShadowMap/build/cmake_install.cmake A$:/ShadowMap/build/Tests/cmake_install.cmake A$:/ShadowMap/build/CTestTestfile.cmake A$:/ShadowMap/build/Tests/CTestTestfile.cmake: RERUN_CMAKE | A$:/ShadowMap/CMakeLists.txt A$:/ShadowMap/Tests/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build A$:/ShadowMap/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
+build A$:/ShadowMap/CMakeLists.txt A$:/ShadowMap/Tests/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
 
 
 #############################################
